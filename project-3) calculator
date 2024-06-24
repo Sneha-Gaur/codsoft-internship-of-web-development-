@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #bdb6b6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .calculator {
+            font-size: 20px;
+            width: 100%;
+            grid-template-rows: auto 1fr;
+            background-color: #747070;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 253, 253, 0.571);
+            max-width: 400px;
+        }
+        
+        .display {
+            grid-column: span 4;
+            background-color: #333;
+            color: #f8efeff4;
+            text-align: right;
+            padding: 10px;
+            font-size: 3ex;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
+        }
+        
+        .buttons button {
+            font-size: 1.5em;
+            padding: 25px;
+            border: 2;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #f0f0f0;
+        }
+        
+        .buttons button:hover {
+            background-color: #545050;
+        }
+        
+        .buttons .operator {
+            background-color: #f39c12;
+            color: #fff;
+        }
+        
+        .buttons .operator:hover {
+            background-color: #e68122;
+        }
+        
+        .buttons .delete {
+            background-color: #22dce6;
+        }
+        
+        .buttons .equal {
+            background-color: #0de768;
+            color: #ffffff;
+            grid-column: span 2;
+        }
+        
+        .buttons .equal:hover {
+            background-color: #056e28;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <header>
+            <h1> Level -1 (Task-3)</h1>
+            <h2> Basic Calculator</h2>
+        </header>
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="appendOperator('%')">%</button>
+            <button onclick="appendNumber('0')" style="grid-column: span 2">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+        let operator = '';
+        let previousInput = '';
+
+        function clearDisplay() {
+            currentInput = '';
+            operator = '';
+            previousInput = '';
+            display.innerText = '0';
+        }
+
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1);
+            display.innerText = currentInput || '0';
+        }
+
+        function appendNumber(number) {
+            currentInput += number;
+            display.innerText = previousInput + ' ' + operator + ' ' + currentInput;
+        }
+
+        function appendOperator(op) {
+            if (currentInput === '' && previousInput === '') return;
+            if (currentInput !== '') {
+                previousInput = currentInput;
+                currentInput = '';
+            }
+            operator = op;
+            display.innerText = previousInput + ' ' + operator;
+        }
+
+        function calculateResult() {
+            if (currentInput === '' || previousInput === '') return;
+            let result;
+            const prev = parseFloat(previousInput);
+            const current = parseFloat(currentInput);
+            switch (operator) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    result = prev / current;
+                    break;
+                case '%':
+                    result = prev % current;
+                    break;
+                default:
+                    return;
+            }
+            currentInput = result.toString();
+            operator = '';
+            previousInput = '';
+            display.innerText = currentInput;
+        }
+    </script>
+</body>
+
+</html>
