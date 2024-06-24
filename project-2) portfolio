@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #00f2fa;
+            margin: 5%;
+        }
+        
+        #title {
+            text-align: center;
+            text-shadow: 5px 5px 10px rgb(10, 8, 8);
+            font-size: 5vh;
+        }
+        
+        img {
+            display: inline-block;
+            width: 30%;
+        }
+        
+        #caption {
+            font-size: 40px;
+            font-family: Gill Sans;
+            color: black;
+        }
+        
+        div#portfolio-data {
+            background-color: rgba(139, 46, 89, 0.25);
+            box-shadow: 10px 10px 10px #aaacaa;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 20px 20px;
+            margin: 11px;
+            margin-top: 50px;
+        }
+        
+        h1.title-portfolio {
+            font-size: 60px;
+            color: rgb(4, 3, 3);
+            text-align: center;
+            text-shadow: 5px 5px 10px rgb(20, 194, 200);
+        }
+        
+        #portfolio-link {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <header>
+        <h1>Sneha gaur</h1>
+        <p>"For Innovative Design & Development ,Building Responsive and Dynamic Web Experiences"</p>
+    </header>
+
+    <section id="about">
+        <img src="sneha.jpg " alt="Your Photo">
+        <div class="bio">
+            <h1>About Me</h1>
+            <p>Hello, I'm Sneha Gaur. I am a passionate web developer with experience in creating dynamic and responsive websites. I’ve been working as a web developer for a few months now, and I’m passionate about everything that goes into making websites
+                work well and look beautiful. The web is my passion because it’s where I can find the most exciting projects to work on. It’s also where I get to express my creativity in ways that are hard to find elsewhere. I love working with clients
+                who want something more than just another website; they want their site to be more than just another website. They want it to be memorable, engaging, and valuable—and that’s where I come in!
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h1>Projects </h1>
+
+        <div class="project">
+            <h2>Project One</h2>
+            <h3>AGE CALCULATOR</h3>
+            <img src="age.jpg.jpeg" alt="Project One">
+            <p>
+                <h3>Description- </h3>This is my project of "AGE CALCULATOR".In Age Calculator, we will take the date of birth as the date input and it prints the age from the current date . I'm create the structure of the Age Calculator using HTML and CSS
+                will add the functionality to calculate the age in years, months, and days.</p>
+        </div>
+        <div class="project">
+            <h2>Project Two</h2>
+            <h3>TODOS-TASK CREATOR</h3>
+
+            <img src="todos.jpeg" alt="Project Two">
+            <p>
+                <h3>Description- </h3>This is my project of "TODOS- TASK CREATOR".In TODOS, I'm take the three task as an input to learn html, css and javascript . This task creator is provide a task which is related to html, css and javascript . I'm create
+                the structure of the todos using HTML and CSS and add the functionality to create the tasks within a seconds and we have to complete the given task which is assigned by the task creator.</p>
+            </p>
+        </div>
+        cxgp
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="Ishani's Resume.pdf" download>Download My Resume</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: snehagaur1911@gmail.com</p>
+        <p>Phone:6393681502</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sneha Gaur. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
